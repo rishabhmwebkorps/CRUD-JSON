@@ -1,0 +1,101 @@
+#main-form {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+label {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+span{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 15px;
+}
+
+.cardDetails img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px;
+    border: 1px solid rgb(179, 173, 173);
+    border-radius: 6px;
+    font-size: 17px;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+
+}
+
+#delete-button {
+    background-color: rgb(248, 93, 93);
+}
+
+.cardDetails p {
+    font-size: 20px;
+
+}
+
+#detailslist {
+    display: flex;
+    padding: 10px;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.cardDetails {
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px;
+    width: 20%;
+    box-shadow: 10px 10px rgb(61, 54, 61);
+}
+
+#editDetails {
+    z-index: 10;
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    background-color: rgb(182, 182, 224);
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.Cancel {
+    padding: 10px;
+    font-size: 18px;
+    background-color: cadetblue;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    width: 60px;
+    margin-top: 5px;
+}
