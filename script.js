@@ -1,9 +1,3 @@
-const CLOUDINARY_URL=cloudinary:924866264556587:tum5zUqRd2_lReyaIKt_BscPTUI@dskkzdqls
-const CLOUDINARY_PRESET = lti3yae9;
-
-
-
-
 
 
 
