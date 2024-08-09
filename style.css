@@ -5,6 +5,8 @@
     border-radius: 5px;
     margin: auto;
     margin-top: 25px;
+    margin-top: 150px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 label {
@@ -13,15 +15,16 @@ label {
     font-weight: 600;
 }
 
-span{
+
+span {
     font-size: 20px;
     font-weight: 700;
 }
-
 h1 {
     font-size: 25px;
     font-weight: 700;
     padding: 15px;
+    text-align: center;
 }
 
 .cardDetails img {
@@ -29,9 +32,7 @@ h1 {
     height: 200px;
     object-fit: cover;
     border-radius: 10%;
-
 }
-
 input {
     width: 95%;
     padding: 12px;
@@ -40,7 +41,6 @@ input {
     border-radius: 6px;
     font-size: 17px;
 }
-
 button {
     padding: 10px;
     font-size: 18px;
@@ -51,21 +51,34 @@ button {
 
 }
 
+.back {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
 #delete-button {
     background-color: rgb(248, 93, 93);
 }
-
 .cardDetails p {
     font-size: 20px;
-
 }
-
 #detailslist {
     display: flex;
     padding: 10px;
     gap: 35px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
+    height: 100%;
+    justify-content: space-between;
+    background-color: rgb(222, 233, 232);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
 
 }
 
@@ -74,20 +87,25 @@ button {
     border: 1px solid black;
     padding: 20px;
     width: 20%;
+    height: 50%;
+    background-color: white;
     box-shadow: 10px 10px rgb(61, 54, 61);
 }
 
 #editDetails {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.edit-container {
     z-index: 10;
     width: 50%;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 20%;
     background-color: rgb(182, 182, 224);
     padding: 25px;
     border-radius: 6px;
 }
-
 .Cancel {
     padding: 10px;
     font-size: 18px;
