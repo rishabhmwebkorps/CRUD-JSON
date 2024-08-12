@@ -1,7 +1,11 @@
 
 
 
-document.getElementById('main-form').addEventListener('submit', async function (e) {
+  const uploadManager = new Bytescale.UploadManager({
+    apiKey: "public_12a1z4xFtKzJe1RtrNiX19ukEhxN" // Your API key.
+  });
+
+  document.getElementById('main-form').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     function detailsId() {
@@ -13,41 +17,37 @@ document.getElementById('main-form').addEventListener('submit', async function (
     const fileInput = document.getElementById('fileInput').files[0];
 
     if (fileInput) {
-      const reader = new FileReader();
-
-      reader.onload = function (event) {
-        const fileContent = event.target.result;
+      try {
+        const { fileUrl } = await uploadManager.upload({ data: fileInput });
 
         const formData = {
           id: randomId,
           name: document.getElementById('name').value,
           email: document.getElementById('email').value,
           phone: document.getElementById('phone').value,
-          file: fileContent,
+          fileUrl: fileUrl, 
         };
 
-        submitData(formData);
-      };
+        await submitData(formData);
+        console.log('File uploaded successfully!');
+        window.location.href = '/Cards.html';
 
-      reader.onerror = function () {
-        console.error('Error reading file');
-      };
-
-      reader.readAsDataURL(fileInput); 
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        console.log(`Error: ${error.message}`);
+      }
     } 
 
-
     async function submitData(formData) {
-
+      console.log(formData, 'Data of form in object');
       await fetch('http://localhost:3000/details', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      getDetails();
-      alert('Success');
-
-
+    
+      console.log('Success');
     }
-          window.location.href = '/Cards.html'
+
   });
+
