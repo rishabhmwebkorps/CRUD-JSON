@@ -20,7 +20,17 @@ body{
 #submit{
     width: 100%;
 }
-
+.sign{
+    color: #accbee;
+    font-size: 54px;
+    color: white;
+    font-weight: 800;
+    padding: 20px;
+    background:linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+}
 
 label {
     display: flex;
@@ -28,7 +38,7 @@ label {
     font-weight: 600;
 }
 .card-heading{
-    font-size: 50px;
+    font-size: 58px;
     font-weight: 800;
     color: white;
     text-align: left;
@@ -59,6 +69,7 @@ input {
     border: 1px solid rgb(179, 173, 173);
     border-radius: 6px;
     font-size: 17px;
+    
 }
 button {
     padding: 20px;
@@ -109,7 +120,7 @@ a {
     height: 50%;
     background-color: white;
     box-shadow: 10px 10px rgb(130, 194, 231);
-    margin-top: 8px;
+    margin-top: 12px;
     
 }
 
