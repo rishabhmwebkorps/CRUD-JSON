@@ -47,7 +47,7 @@
         body: JSON.stringify(formData)
       });
         loader.style.display = 'none'
-      window.location.href = '/Cards.html';
+      window.location.href = '/cards.html';
     
       console.log('Success');
     }
