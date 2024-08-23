@@ -91,7 +91,7 @@ input {
 }
 
 button {
-    padding: 20px;
+    padding: 18px;
     font-size: 18px;
     background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
     border-radius: 5px;
