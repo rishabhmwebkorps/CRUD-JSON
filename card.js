@@ -54,7 +54,7 @@ async function editDetails(id) {
 
 document.getElementById('editDetails').addEventListener('submit', async function (e) {
     e.preventDefault();
-       let loader = document.getElementById('loader');
+    let loader = document.getElementById('loader');
     loader.style.display = 'block'
 
     const id = document.getElementById('edit-id').value;
