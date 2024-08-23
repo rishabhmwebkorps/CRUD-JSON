@@ -10,11 +10,11 @@
 
 <body>
 
-    <h1>Details Card</h1>
+    <h1 class="card-heading">Details Card</h1>
     <button class="back"><a href="/index.html">Going Back</a></button>
     <div id="detailslist"></div>
 
-    <form id="editDetails" style="display:none;">
+    <form id="editDetails" class="card-form" style="display:none;">
 
         <div class="edit-container">
             <h1>Edit Form</h1>
@@ -27,18 +27,19 @@
             <br>
             <label>Phone</label>
             <input type="number" name="editphone" id="editphone">
+            <div class="loader" id="loader" style="display:none;"></div>
             <br>
             <label>Edit Image</label>
             <input type="file" name="editfile" id="editfile">
             <br>
             <button type="submit">Save Edit Changes</button>
 
-            <div onclick=onCancel() class="Cancel">Cancel</div>
+            <span id="cancel" onclick="onCancel()" class="Cancel">Cancel</span>
 
         </div>
     </form>
     <script src="https://js.bytescale.com/sdk/v3"></script>
-    <script src="card.js">
+    <script src="/card.js">
 
 
     </script>

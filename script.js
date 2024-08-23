@@ -2,11 +2,13 @@
 
 
   const uploadManager = new Bytescale.UploadManager({
-    apiKey: "public_12a1z4xFtKzJe1RtrNiX19ukEhxN" // Your API key.
+    apiKey: "public_12a1z4xFtKzJe1RtrNiX19ukEhxN" 
   });
 
   document.getElementById('main-form').addEventListener('submit', async function (e) {
     e.preventDefault();
+    let loader = document.getElementById('loader');
+    loader.style.display = 'block'
 
     function detailsId() {
       const min = 1000;
@@ -29,13 +31,12 @@
         };
 
         await submitData(formData);
-        console.log('File uploaded successfully!');
-        window.location.href = '/Cards.html';
 
       } catch (error) {
         console.error('Error uploading file:', error);
         console.log(`Error: ${error.message}`);
-      }
+      } 
+      
     } 
 
     async function submitData(formData) {
@@ -45,9 +46,10 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
+        loader.style.display = 'none'
+      window.location.href = '/Cards.html';
     
       console.log('Success');
     }
 
   });
-
