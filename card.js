@@ -4,7 +4,7 @@ const uploadManager = new Bytescale.UploadManager({
 
 async function getDetails() {
     try {
-        const response = await fetch(`http://localhost:3000/details`);
+        const response = await fetch(`https://j-server-2tu7.onrender.com/details`);
         const details = await response.json();
         const detailList = document.getElementById('detailslist');
         detailList.innerHTML = '';
