@@ -59,7 +59,6 @@ document.getElementById('editDetails').addEventListener('submit', async function
 
     const id = document.getElementById('edit-id').value;
     const editImage = document.getElementById('editfile').files[0];
-
     let fileUrl;
 
     if (editImage) {

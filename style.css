@@ -48,6 +48,14 @@ label {
     color: white;
     text-align: left;
     margin-left: 47px;
+    background-color: rgb(45, 103, 189);
+    border-radius: 10px;
+    width: 93%;
+ 
+}
+.card-heading:hover {
+    transform: scale(100%);
+    color: whitesmoke;
 }
 
 span {
