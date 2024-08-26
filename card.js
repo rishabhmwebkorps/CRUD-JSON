@@ -1,6 +1,5 @@
-const uploadManager = new Bytescale.UploadManager({
-    apiKey: "public_12a1z4xFtKzJe1RtrNiX19ukEhxN"
-});
+
+var cl = new cloudinary.Cloudinary({cloud_name: "dskkzdqls", secure: true});
 
 async function getDetails() {
     try {
@@ -29,7 +28,7 @@ async function getDetails() {
 
 async function deleteDetails(id) {
     try {
-        await fetch(`http://localhost:3000/details/${id}`, { method: 'DELETE' });
+        await fetch(`https://j-server-2tu7.onrender.com/details/${id}`, { method: 'DELETE' });
         getDetails();
     } catch (error) {
         console.error('Error deleting detail:', error);
@@ -38,7 +37,7 @@ async function deleteDetails(id) {
 
 async function editDetails(id) {
     try {
-        const response = await fetch(`http://localhost:3000/details/${id}`);
+        const response = await fetch(`https://j-server-2tu7.onrender.com/details/${id}`);
         const detail = await response.json();
 
         document.getElementById('editname').value = detail.name;
@@ -62,12 +61,25 @@ document.getElementById('editDetails').addEventListener('submit', async function
     let fileUrl;
 
     if (editImage) {
-        const uploadResponse = await uploadManager.upload({ data: editImage });
-        fileUrl = uploadResponse.fileUrl;
+        const formData = new FormData();
+        formData.append('file', editImage);
+        formData.append('upload_preset', 'lgrvaj0m');
+  
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cl.config().cloud_name}/upload`, {
+          method: 'PUT',
+          body: formData
+        });
+  
+        if (!response.ok) {
+          throw new Error(`Upload failed with status ${response.status}`);
+        }
+  
+        const data = await response.json();
+        fileUrl = data.secure_url;
     } else {
         fileUrl = document.getElementById('editfile').dataset.currentFileUrl;
     }
-
+  
     const editedData = {
         name: document.getElementById('editname').value,
         email: document.getElementById('editemail').value,
@@ -75,7 +87,7 @@ document.getElementById('editDetails').addEventListener('submit', async function
         fileUrl: fileUrl,
     };
 
-    await fetch(`http://localhost:3000/details/${id}`, {
+    await fetch(`https://j-server-2tu7.onrender.com/details/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editedData),

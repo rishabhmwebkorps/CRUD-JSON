@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary-core": "^2.13.1",
     "json-server": "^1.0.0-beta.1",
+    "loadash": "^1.0.0",
     "upload-js": "^2.24.3"
   }
 }
